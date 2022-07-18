@@ -1,5 +1,5 @@
 import { makeAutoObservable, runInAction } from 'mobx';
-import { initFirebase, isNameAvailable } from './firebase';
+// import { initFirebase, isNameAvailable } from './firebase';
 import { generateName } from './utils/nameGenerator';
 import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
@@ -8,6 +8,9 @@ import { LocationAccuracy } from 'expo-location';
 import { calcDistance } from './utils/calcDistance';
 import { PoopSchema } from './types/poopSchema';
 import firebase from 'firebase/app';
+
+
+const isNameAvailable = async (name: string) => true;
 
 export type UserProfileSchema = {
   name: string;
@@ -153,7 +156,7 @@ class Store {
       }
     }, 2000);
 
-    setTimeout(() => { initFirebase(); });
+    // setTimeout(() => { initFirebase(); });
   }
 
   get displayedPoops(): Array<PoopSchema & { message: string }> {

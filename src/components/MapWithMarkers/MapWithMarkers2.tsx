@@ -24,7 +24,7 @@ const PoopImages = [
   require('../../assets/images/poop5.png'),
 ];
 
-export const MapWithMarkers = observer(() => {
+export const MapWithMarkers2 = observer(() => {
 
   const map: React.LegacyRef<MapView> = React.useRef(null);
   const [lastPoop, setLastPoop] = React.useState<PoopSchema | null>(null);
@@ -42,7 +42,7 @@ export const MapWithMarkers = observer(() => {
         });
       }
     });
-  }, []);
+  });
 
 
   React.useEffect(() => {
@@ -64,7 +64,7 @@ export const MapWithMarkers = observer(() => {
         });
       }
     });
-  }, []);
+  });
 
   const handlePress = () => {
     store.showRegisterPoop();
@@ -74,6 +74,7 @@ export const MapWithMarkers = observer(() => {
     <MapView
       ref={map}
       style={style}
+      // region={store.region}
       initialRegion={store.initialRegion}
       onPress={handlePress}>
       {store.displayedPoops.map(poop =>
@@ -83,8 +84,8 @@ export const MapWithMarkers = observer(() => {
           image={PoopImages[poop.rating.size + poop.rating.consistency - 2]}
           title={poop.message}>
         </Marker>)}
-
     </MapView>
+
     {lastPoop && <SnackBar
       visible={true}
       position='bottom'
