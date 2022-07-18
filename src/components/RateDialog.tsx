@@ -4,13 +4,6 @@ import { Rating } from 'react-native-ratings';
 import { store } from '../store';
 import { observer } from 'mobx-react-lite';
 
-// type Props = {
-//   visible: boolean;
-
-//   onOK: () => void;
-//   onCancel: () => void;
-// };
-
 export const RateDialog = observer(() => {
   return (
     // <View style={styles.centeredView}>
@@ -58,10 +51,6 @@ export const RateDialog = observer(() => {
         </View>
       </View>
     </Modal>
-    // <Pressable style={[styles.button, styles.buttonOpen]} onPress={() => props.onClose()}>
-    //   <Text style={styles.textStyle}>Show Modal</Text>
-    // </Pressable>
-    // </View>
   );
 });
 

@@ -24,9 +24,9 @@ const App = observer(() => {
           <>
           <SafeAreaProvider>
             <Navigation colorScheme={colorScheme} />
-            {/* <RateDialog
-              visible={store.showingRegisterPoop}
-              onClose={store.handleCancelRegisterPoop} /> */}
+            <RateDialog />
+              {/* // visible={store.showingRegisterPoop} */}
+              {/* onClose={store.handleCancelRegisterPoop} /> */}
             <StatusBar />
           </SafeAreaProvider>
           </>
